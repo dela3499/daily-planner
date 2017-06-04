@@ -39,8 +39,9 @@ body {
 input {
 	background: none;
 	border: none;
-	font-size: 20px;
+	font-size: 18px;
 	font-family: Roboto;
+	width: 300px;
 }
 
 input:focus{
