@@ -14,7 +14,7 @@ body {
 #container {
 	max-width: 950px;
 	margin: 0 auto;
-	margin-top: 120px;
+	margin-top: 60px;
 }
 
 #header .title {
@@ -36,26 +36,6 @@ body {
 	width: 100%;
 }
 
-#header .item.small {
-	font-size: 18px;
-	opacity: 0.3;
-	margin-top: 10px;
-}
-
-#section-links {
-	margin-top: 50px;
-}
-
-#section-links span {
-	cursor: pointer;
-	margin-right: 5px;
-	opacity: 0.6;
-}
-
-#section-links .active {
-	font-weight: bold;
-}
-
 input {
 	background: none;
 	border: none;
@@ -69,15 +49,19 @@ input:focus{
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: grey;
+  opacity: 0.5;
 }
 ::-moz-placeholder { /* Firefox 19+ */
   color: grey;
+  opacity: 0.5;
 }
 :-ms-input-placeholder { /* IE 10+ */
   color: grey;
+  opacity: 0.5;
 }
 :-moz-placeholder { /* Firefox 18- */
   color: grey;
+  opacity: 0.5;
 }
 
 body {
@@ -102,11 +86,11 @@ td,th {
  }
 
 td, th {
-	width: 40px;
-	height: 40px;
+	/*width: 50px;*/
+	/*height: 40px;*/
 	/*background: red;
 	color: white;*/
-	text-align: center;
+	text-align: left;
 	/*box-sizing: border-box;*/
 
 }
@@ -115,73 +99,32 @@ th {
 	opacity: 0.5;
 }
 
-.currentPeriod {
-	color: #9dc78d;
-	font-size: 20px;
-}
-
-.big {
-	font-size: 25px !important;
-}
-
-.habit-title {
-	text-align: left;
-	max-width: 600px;
-	min-width: 400px;
-	padding-left: 5px;
-	opacity: 0.5;
-	/*background: red;*/
-}
-
-.complete.previousPeriod, .complete.currentPeriod {
-	background: #9dc78d;
-}
-
-.incomplete.currentPeriod {
-	background: rgba(255,255,255,0.6);
-	/*border: 1px solid #9dc78d;*/
-}
-
-.incomplete.previousPeriod {
-	background: rgba(255,255,255,0.6);
-}
-
-.incomplete, .complete {
-	cursor: pointer;
-}
-
-.currentPeriod.active:hover, .previousPeriod.active:hover {
-	opacity: 0.4;
-}
-
-.complete.currentPeriod {
-	color: rgba(255,255,255,1);
-}
-
-
-.incomplete.previousPeriod:hover, .incomplete.currentPeriod:hover {
-	background: rgba(0,0,0,0.2);
-	color: rgba(0,0,0,0.6);
-}
-
-.complete.habit-title, .inactive.habit-title {
-	opacity: 0.2;
+.rightAlign {
+	text-align: right;
 }
 
 th {
 	padding-bottom: 5px;
 }
 
-.section { 
+#schedules { 
 	margin-top: 50px;
 }
 
-.all-complete .currentPeriod {
-	background: #3b69dc;
+.am {
+	opacity: 0.4;
 }
 
-.inactive.previousPeriod, .inactive.currentPeriod {
-	background: white !important;
+.pm {
+	opacity: 0.6;
+}
+
+table {
+	float: left;
+}
+
+td {
+	opacity: 0.7;
 }
 
 @media (max-width: 1050px) {

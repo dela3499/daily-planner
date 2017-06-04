@@ -4,7 +4,6 @@
     <title>Daily Planner</title>
 	<script src="mithril.js"></script>
 	<link rel="stylesheet" type="text/css" href="app.css">
-	<link rel="stylesheet" type="text/css" href="animate.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
 	<link 
 	rel="stylesheet" 
@@ -21,253 +20,33 @@
 				made by <a target="_blank" href="https://twitter.com/dela3499">@dela3499</a> 
 				/ fork on <a target="_blank" href="https://github.com/dela3499/daily-planner">GitHub</a></div>
 		</div>
-		<div id="all-habits">
+		<div id="schedules">
 		</div>	
 	</div>
 </body>
 
 <script>
 
-	defaultViewModel = {
-		"currentSection": "daily",
-		"daily": {
-			"habitType": "daily",
-			"currentPeriodTitle": "Th 6/1",
-			"currentPeriod": "",
-			"previousPeriodTitle": "W 5/31",
-			"previousPeriod": "",
-			"habits": {
-				0: {
-					"id": 0,
-					"title": "",
-					"currentPeriod": "complete",
-					"previousPeriod": "complete",
-					"periods": {}
-				},
-				1: {
-					"id": 1,
-					"title": "",
-					"currentPeriod": "complete",
-					"previousPeriod": "complete",
-					"periods": {}
-				},
-				2: {
-					"id": 2,
-					"title": "",
-					"currentPeriod": "incomplete",
-					"previousPeriod": "complete",
-					"periods": {}
-				},
-				3: {
-					"id": 3,
-					"title": "",
-					"currentPeriod": "incomplete",
-					"previousPeriod": "complete",
-					"periods": {}
-				},
-				4: {
-					"id": 4,
-					"title": "",
-					"currentPeriod": "incomplete",
-					"previousPeriod": "complete",
-					"periods": {}
-				},
-				5: {
-					"id": 5,
-					"title": "",
-					"currentPeriod": "incomplete",
-					"previousPeriod": "complete",
-					"periods": {}
-				},
-				6: {
-					"id": 6,
-					"title": "",
-					"currentPeriod": "incomplete",
-					"previousPeriod": "complete",
-					"periods": {}
-				},
-				7: {
-					"id": 7,
-					"title": "",
-					"currentPeriod": "incomplete",
-					"previousPeriod": "complete",
-					"periods": {}
-				},
-				8: {
-					"id": 8,
-					"title": "",
-					"currentPeriod": "incomplete",
-					"previousPeriod": "incomplete",
-					"periods": {}
-				},
-				9: {
-					"id": 9,
-					"title": "",
-					"currentPeriod": "incomplete",
-					"previousPeriod": "complete",
-					"periods": {}
-				}
-			}
-		},
-		"weekly": {
-			"habitType": "weekly",
-			"currentPeriodTitle": "",
-			"currentPeriod": "",
-			"previousPeriodTitle": "",
-			"previousPeriod": "",
-			"habits": {
-				0: {
-					"id": 0,
-					"title": "",
-					"currentPeriod": "complete",
-					"previousPeriod": "complete",
-					"periods": {}
-				},
-				1: {
-					"id": 1,
-					"title": "",
-					"currentPeriod": "complete",
-					"previousPeriod": "complete",
-					"periods": {}
-				},
-				2: {
-					"id": 2,
-					"title": "",
-					"currentPeriod": "incomplete",
-					"previousPeriod": "complete",
-					"periods": {}
-				},
-				3: {
-					"id": 3,
-					"title": "",
-					"currentPeriod": "incomplete",
-					"previousPeriod": "complete",
-					"periods": {}
-				},
-				4: {
-					"id": 4,
-					"title": "",
-					"currentPeriod": "incomplete",
-					"previousPeriod": "complete",
-					"periods": {}
-				},
-				5: {
-					"id": 5,
-					"title": "",
-					"currentPeriod": "incomplete",
-					"previousPeriod": "complete",
-					"periods": {}
-				},
-				6: {
-					"id": 6,
-					"title": "",
-					"currentPeriod": "incomplete",
-					"previousPeriod": "complete",
-					"periods": {}
-				},
-				7: {
-					"id": 7,
-					"title": "",
-					"currentPeriod": "incomplete",
-					"previousPeriod": "complete",
-					"periods": {}
-				},
-				8: {
-					"id": 8,
-					"title": "",
-					"currentPeriod": "incomplete",
-					"previousPeriod": "incomplete",
-					"periods": {}
-				},
-				9: {
-					"id": 9,
-					"title": "",
-					"currentPeriod": "incomplete",
-					"previousPeriod": "complete",
-					"periods": {}
-				}
-			}
-		},
-		"monthly": {
-			"habitType": "monthly",
-			"currentPeriodTitle": "",
-			"currentPeriod": "",
-			"previousPeriodTitle": "",
-			"previousPeriod": "",
-			"habits": {
-				0: {
-					"id": 0,
-					"title": "",
-					"currentPeriod": "complete",
-					"previousPeriod": "complete",
-					"periods": {}
-				},
-				1: {
-					"id": 1,
-					"title": "",
-					"currentPeriod": "complete",
-					"previousPeriod": "complete",
-					"periods": {}
-				},
-				2: {
-					"id": 2,
-					"title": "",
-					"currentPeriod": "incomplete",
-					"previousPeriod": "complete",
-					"periods": {}
-				},
-				3: {
-					"id": 3,
-					"title": "",
-					"currentPeriod": "incomplete",
-					"previousPeriod": "complete",
-					"periods": {}
-				},
-				4: {
-					"id": 4,
-					"title": "",
-					"currentPeriod": "incomplete",
-					"previousPeriod": "complete",
-					"periods": {}
-				},
-				5: {
-					"id": 5,
-					"title": "",
-					"currentPeriod": "incomplete",
-					"previousPeriod": "complete",
-					"periods": {}
-				},
-				6: {
-					"id": 6,
-					"title": "",
-					"currentPeriod": "incomplete",
-					"previousPeriod": "complete",
-					"periods": {}
-				},
-				7: {
-					"id": 7,
-					"title": "",
-					"currentPeriod": "incomplete",
-					"previousPeriod": "complete",
-					"periods": {}
-				},
-				8: {
-					"id": 8,
-					"title": "",
-					"currentPeriod": "incomplete",
-					"previousPeriod": "incomplete",
-					"periods": {}
-				},
-				9: {
-					"id": 9,
-					"title": "",
-					"currentPeriod": "incomplete",
-					"previousPeriod": "complete",
-					"periods": {}
-				}
-			}
-		}		
+	var hours = ["5 am","6 am","7 am","8 am","9 am","10 am","11 am","12 pm","1 pm","2 pm","3 pm","4 pm","5 pm","6 pm","7 pm","8 pm","9 pm","10 pm","11 pm","12 am","1 am","2 am","3 am","4 am"]
+
+	var emptyHours = {}
+	var dummy = hours.map(function(hour) {
+		emptyHours[hour] = {
+			title: hour,
+			text: ""
+		}
+	})
+
+	function clone (object) {
+		return JSON.parse(JSON.stringify(object))
 	}
+
+	var initModel = {
+		"today": clone(emptyHours),
+		"template": clone(emptyHours)
+	}
+
+	initModel['today']['5 am']['text'] = 'bob'
 
 	function join(strings) {
 		result = ""
@@ -278,277 +57,76 @@
 	}
 
 	function view(model) {
-		var currentSection = model['currentSection']
-		var sectionModel = model[currentSection]
-		var header = [ 
-			m('tr', 
-				[ m('th', sectionModel['previousPeriodTitle']), 
-				  m('th', sectionModel['currentPeriodTitle']),
-				  m('th',"")
-				]
-			)]
 
-		var allComplete = true			
-		
-		habitType = sectionModel['habitType']
+		function getTable (schedule) { 
+			var header = [m('tr', [
+				m('th',""),
+				m('th',schedule)
+				])]
+			var rows = hours.map(function(hour){
 
-		var rows = [0,1,2,3,4,5,6,7,8,9].map(function (habitID) {
-			
-			var habit = sectionModel['habits'][habitID]
-			
-			var warning = habit['currentPeriod'] == "incomplete" & habit['previousPeriod'] == "incomplete"
-			var smallCongrats = habit['currentPeriod'] == "complete"
-			var largeCongrats = habit['currentPeriod'] == "complete" & habit['previousPeriod'] == "incomplete"
-		
-			var currentText = ""
-			var hoverText = ""
+				function updateText(input) {
+					update({
+						action: "setHourText",
+						schedule: schedule,
+						hour: hour,
+						text: input.target.value
+					})
+				}
 
-			if (warning){
-				currentText = m("i", {class: "fa fa-warning big"})
-				hoverText = "Don't skip two days in a row. Make the habit easier if you need, but make sure to do it."
-			} else if (largeCongrats) {
-				currentText = m("i", {class: "fa fa-thumbs-up big"})
-				hoverText = "Nice! You skipped yesterday, but now you're back on the horse. :)"
-			} else if (smallCongrats) {
-				currentText = m("i", {class: "fa fa-thumbs-up"})
-			}
+				var timeClass = (hour.indexOf('am') !== -1) ? "am" : "pm"
 
-			var inactive = habit['title'] == ""
-			var inactiveClass = inactive ? "inactive" : ""
-			var previousPeriodClasses = join(['previousPeriod', habit['previousPeriod'], inactiveClass])
-			var currentPeriodClasses = join(['currentPeriod', habit['currentPeriod'], inactiveClass])
-			var labelClasses = join(['habit-title', habit['currentPeriod']])
-
-			function togglePrevious() {
-				update({
-					action: 'toggleComplete', 
-					habitType: habitType, 
-					habitID: habitID,
-					period: 'previousPeriod'})
-			}
-
-			function toggleCurrent() {
-				update({
-					action: 'toggleComplete', 
-					habitType: habitType, 
-					habitID: habitID,
-					period: 'currentPeriod'})
-			}
-
-			function updateHabitTitle(input) {
-				update({
-					action: "setHabitTitle",
-					habitType: habitType,
-					habitID: habitID,
-					text: input.target.value
-				})
-			}
-
-			if (inactive) {
-				return m("tr",
-					[ m('td', {class: previousPeriodClasses, title: ""}, ""),
-				      m('td', {class: currentPeriodClasses}, ""),
-				      m('td', {class: labelClasses + " inactive"}, 
-				      	m('input', {value: habit['title'], oninput: updateHabitTitle, placeholder: "enter habit here"})
-				      	),
-					])				
-			} else {
-				
-				allComplete = allComplete & (habit['currentPeriod'] == 'complete') // consider only active tasks when assessing completeness
-				
-				return m("tr",
-					[ m('td', {class: previousPeriodClasses + " active", onclick: togglePrevious}, ""),
-				      m('td', {class: currentPeriodClasses + " active", onclick: toggleCurrent, title: hoverText}, currentText),
-				      m('td', {class: labelClasses + " active"}, 
-				      	m('input', {value: habit['title'], oninput: updateHabitTitle, placeholder: "enter habit here"})
-				      	),
-					])				
-			}
-
-
-			
-
-		})
-
-		var allCompleteClass = allComplete ? "all-complete" : ""
-
-		function setDaily() {
-			update({action: 'setSection', section: 'daily'})
+				return m('tr', [
+					m('td', {class: join([timeClass, 'rightAlign'])}, hour),
+					m('td', 
+						m('input', {value: model[schedule][hour]['text'], oninput: updateText, placeholder: "______________"})
+					)
+					])
+			}) 
+			return header.concat(rows)
 		}
 
-		function setWeekly() {
-			update({action: 'setSection', section: 'weekly'})
-		}
+		var todaySchedule = m('table', getTable('today'))
+		var templateSchedule = m('table', getTable('template'))
 
-		function setMonthly() {
-			update({action: 'setSection', section: 'monthly'})
-		}		
-
-		dailyActive = 'daily' == currentSection ? "active" : ""
-		weeklyActive = 'weekly' == currentSection ? "active" : ""
-		monthlyActive = 'monthly' == currentSection ? "active" : ""
-
-
-		var sectionLinks = m('div', {id: 'section-links'},[
-			m('span', {onclick: setDaily, class: dailyActive}, 'Daily'),
-			m('span',"/"),
-			m('span', {onclick: setWeekly, class: weeklyActive}, 'Weekly'),
-			m('span',"/"),
-			m('span', {onclick: setMonthly, class: monthlyActive}, 'Monthly')
+		return m("div",[
+			todaySchedule,
+			templateSchedule
 			])
-
-
-		return m('div', [
-				sectionLinks,
-				m('div', 
-					{class: join(["section", allCompleteClass])},
-					m('table', header.concat(rows))
-					)]
-				)
-	}
-
-	function toggle(x) {
-		if (x == "complete") {
-			return "incomplete"
-		} else {
-			return "complete"
-		}
 	}
 
 	function update(action) {
 
-		viewModel = JSON.parse(localStorage.getItem('habituate'))
+		model = JSON.parse(localStorage.getItem('daily-planner'))
 
-		if (action['action'] == 'toggleComplete') {
-			habitType = action['habitType']
-			habitID = action['habitID']
-			period = action['period']
-			viewModel[habitType]['habits'][habitID][period] = toggle(viewModel[habitType]['habits'][habitID][period])
-
-			periodName = viewModel[habitType][period]
-			viewModel[habitType]['habits'][habitID]["periods"][periodName] = viewModel[habitType]['habits'][habitID][period]
-
-		} else if (action['action'] == 'setHabitTitle') {
-			habitType = action['habitType']
-			habitID = action['habitID']
-			text = action['text']
-			viewModel[habitType]['habits'][habitID]['title'] = text
-		} else if (action['action'] == 'setSection') {
-			viewModel['currentSection'] = action['section']
+		if (action['action'] == 'setHourText') {
+			var schedule = action['schedule']
+			var hour = action['hour']
+			var text = action['text']
+			model[schedule][hour]['text'] = text
 		}
 
 
-		localStorage.setItem('habituate', JSON.stringify(viewModel));
+		localStorage.setItem('daily-planner', JSON.stringify(model));
 		render()
-		// console.log(viewModel)
-	}
-
-	function shiftDate(dateInput, nDays) {
-		var date = new Date(dateInput)
-		return new Date(date.setDate(date.getDate() + nDays))
-	}
-	
-	function shiftMonth(dateInput, nMonths) {
-		var date = new Date(dateInput)
-		return new Date(date.setMonth(date.getMonth() + nMonths))
-	}	
-
-	function getPeriodString(section, dateString) {
-		date = new Date(dateString)
-		dayOfWeek = ['Sun','Mon','Tues','Wed','Th','Fri','Sat'][date.getDay()]
-		month = date.getMonth() + 1
-		dayOfMonth = date.getDate()
-		monthNames = ['Jan','Feb','Mar','Apr', 'May','June','July','Aug','Sep','Oct','Nov', 'Dec']
-
-		if (section == "daily" || section == "weekly") {
-			return dayOfWeek + " " + month.toString() + "/" + dayOfMonth.toString()
-		} else if (section == 'monthly') {
-			return monthNames[date.getMonth()]
-		}
 	}
 
 	function init() {
 		// prepare localstorage
-		var model = JSON.parse(localStorage.getItem('habituate'))
+		var model = JSON.parse(localStorage.getItem('daily-planner'))
 		if (!model) {
 			console.log("setting default model")
-			model = defaultViewModel
+			model = initModel
 		} 
 
-		if (model["currentSection"] == null) { // migrate to new model
-			model["currentSection"] = "daily"
-		}
-		
-		if (model["daily"]['habitType'] == null) {
-			model["daily"]['habitType'] = 'daily'
-		}
-
-		if (model["weekly"] == null) { // migrate to new model
-			model['weekly'] = defaultViewModel['weekly']
-		}
-
-		if (model["monthly"] == null) { // migrate to new model
-			model['monthly'] = defaultViewModel['monthly']
-		}
-
-		// check if today & yesterday are present in daily habits
-		function initHabitSection(section, previousPeriodDateString, currentPeriodDateString) {
-			var dummy = [0,1,2,3,4,5,6,7,8,9].map(function(habitID) {
-				currentPeriodHabitStatus = model[section]['habits'][habitID]['periods'][currentPeriodDateString]
-				previousPeriodHabitStatus = model[section]['habits'][habitID]['periods'][previousPeriodDateString]
-				if (!currentPeriodHabitStatus) {
-					model[section]['habits'][habitID]['periods'][currentPeriodDateString] = "incomplete"
-				}
-				if (!previousPeriodHabitStatus) {
-					model[section]['habits'][habitID]['periods'][previousPeriodDateString] = "complete"
-				}
-				model[section]['habits'][habitID]["previousPeriod"] = model[section]['habits'][habitID]['periods'][previousPeriodDateString]
-				model[section]['habits'][habitID]["currentPeriod"] = model[section]['habits'][habitID]['periods'][currentPeriodDateString]
-				
-				model[section]['currentPeriod'] = currentPeriodDateString
-				model[section]['previousPeriod'] = previousPeriodDateString
-
-				model[section]['currentPeriodTitle'] = getPeriodString(section, currentPeriodDateString)
-				model[section]['previousPeriodTitle'] = getPeriodString(section, previousPeriodDateString)
-			})			
-		}
-
-		// daily stuff
-		var todayDate = shiftDate(new Date(), 0)
-		var today = todayDate.toDateString()
-		var yesterdayDate = shiftDate(todayDate, -1)
-		var yesterday = yesterdayDate.toDateString()
-		
-		initHabitSection('daily', yesterday, today)
-		
-		// weekly stuff
-		var lastMondayDate = shiftDate(todayDate, -(todayDate.getDay()+6) % 7)
-		var beforeLastMondayDate = shiftDate(lastMondayDate, -7)
-		
-		var lastMonday = lastMondayDate.toDateString()
-		var beforeLastMonday = beforeLastMondayDate.toDateString()		
-
-		initHabitSection('weekly', beforeLastMonday, lastMonday)
-
-		// monthly stuff
-		var firstOfThisMonthDate = new Date(today) //initialize
-		firstOfThisMonthDate.setDate(1) // actually first of month now
-		firstOfThisMonth = firstOfThisMonthDate.toDateString()
-
-		var firstOfLastMonthDate = new Date(firstOfThisMonthDate)
-		firstOfLastMonthDate = shiftMonth(firstOfLastMonthDate, -1)
-		firstOfLastMonth = firstOfLastMonthDate.toDateString()
-
-		initHabitSection('monthly', firstOfLastMonth, firstOfThisMonth)
-
-		localStorage.setItem('habituate', JSON.stringify(model));
+		localStorage.setItem('daily-planner', JSON.stringify(model));
 	}
 
-	// localStorage.clear('habituate')
+	localStorage.clear('daily-planner')
 
 	function render() {
-		var root = document.getElementById("all-habits")
-		var model = JSON.parse(localStorage.getItem('habituate'))
+		var root = document.getElementById("schedules")
+		var model = JSON.parse(localStorage.getItem('daily-planner'))
 		m.render(root, view(model))
 	}
 
