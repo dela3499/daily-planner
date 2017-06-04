@@ -46,8 +46,6 @@
 		"template": clone(emptyHours)
 	}
 
-	initModel['today']['5 am']['text'] = 'bob'
-
 	function join(strings) {
 		result = ""
 		for (var i = strings.length - 1; i >= 0; i--) {
@@ -122,7 +120,7 @@
 		localStorage.setItem('daily-planner', JSON.stringify(model));
 	}
 
-	localStorage.clear('daily-planner')
+	// localStorage.clear('daily-planner')
 
 	function render() {
 		var root = document.getElementById("schedules")
